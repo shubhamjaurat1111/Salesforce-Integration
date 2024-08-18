@@ -1,0 +1,151 @@
+<template>
+    <div class="slds-tabs_card">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-opportunity">
+                                <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span>Account</span>
+                                        <span class="slds-page-header__title slds-truncate"
+                                            title="Recently Viewed">Recently Viewed</span>
+                                    </h1>
+                                </div>
+                                <div class="slds-page-header__name-switcher">
+                                    <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                        <button class="slds-button slds-button_icon slds-button_icon-small"
+                                            aria-haspopup="true" title="Switch list view">
+                                            <svg class="slds-button__icon slds-icon_x-small" aria-hidden="true">
+                                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down">
+                                                </use>
+                                            </svg>
+                                            <span class="slds-assistive-text">Switch list view</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-page-header__col-actions">
+                    <div class="slds-page-header__controls">
+                        <div class="slds-page-header__control">
+                            <ul class="slds-button-group-list">
+                                <li>
+                                  <button class="slds-button slds-button_neutral">Edit</button>
+                                </li>
+                                <li>
+                                  <button class="slds-button slds-button_neutral">Delete</button>
+                                </li>
+                                <li>
+                                  <button class="slds-button slds-button_neutral">Clone</button>
+                                </li>
+                                <li>
+                                  <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="More Actions">
+                                        <lightning-icon icon-name="utility:switch" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+                                      <span class="slds-assistive-text">More Actions</span>
+                                    </button>
+                                  </div>
+                                </li>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-meta">
+                    <p class="slds-page-header__meta-text">10 items • Updated 13 minutes ago</p>
+                </div>
+                <div class="slds-page-header__col-controls">
+                    <div class="slds-page-header__controls">
+                        <div class="slds-page-header__control">
+                            <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                <button class="slds-button slds-button_icon slds-button_icon-more" aria-haspopup="true"
+                                    aria-expanded="false" title="List View Controls">
+                                    <span class="slds-assistive-text">List View Controls</span> 
+                                    <lightning-icon icon-name="utility:settings" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+
+                                </button>
+                            </div>
+                        </div>
+                        <div class="slds-page-header__control">
+                            <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                <button class="slds-button slds-button_icon slds-button_icon-more" aria-haspopup="true"
+                                    aria-expanded="false" title="Change view">
+                                    <lightning-icon icon-name="utility:table" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+
+                                </button>
+                            </div>
+                        </div>
+                        <div class="slds-page-header__control">
+                            <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                title="Edit List">
+                                <lightning-icon icon-name="utility:edit" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+
+                            </button>
+                        </div>
+                        <div class="slds-page-header__control">
+                            <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                title="Refresh List">
+                                <lightning-icon icon-name="utility:refresh" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+
+                            </button>
+                        </div>
+                        <div class="slds-page-header__control">
+                            <ul class="slds-button-group-list">
+                                <li>
+                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                        title="Charts">
+                                        <lightning-icon icon-name="utility:chart" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                        title="Filters">
+                                        <lightning-icon icon-name="utility:filterList" alternative-text="Warning!" title="Warning" size="xx-small"></lightning-icon>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slds-tabs_card">
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    columns={columns}
+                    onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </div>
+        <div class="slds-m-around--medium" style="width: 30rem;">
+            <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate" title="Record details"><a href="javascript:void(0);">Record details</a></h3>
+                <div class="slds-tile__detail">
+                    <dl class="slds-list_horizontal slds-wrap">
+                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name:</dt>
+                        <dd class="slds-item_detail slds-truncate">{record.name}</dd>
+                        <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Balance">Balance:</dt>
+                        <dd class="slds-item_detail slds-truncate">
+                            <lightning-formatted-number value={record.amount} format-style="currency"></lightning-formatted-number>
+                        </dd>
+                    </dl>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+</template>
